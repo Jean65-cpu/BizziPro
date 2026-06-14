@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCALEBIZZ | Création de Sites Web Professionnels à Kara</title>
+    <meta name="description" content="SCALEBIZZ est votre agence web de confiance à Kara, Togo. Nous concevons des sites vitrines et e-commerce modernes, performants et adaptés à votre budget.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0f172a', /* slate-900 - Deep Blue */
+                        secondary: '#1e293b', /* slate-800 */
+                        accent: '#f97316', /* orange-500 */
+                        accentHover: '#ea580c', /* orange-600 */
+                        light: '#f8fafc',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- AOS CSS for Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #2563eb, #f97316);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-700 bg-gray-50 overflow-x-hidden">
+
+    <!-- 1. HEADER / NAVIGATION -->
+    <header class="fixed w-full top-0 z-50 glass-nav transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="text-2xl font-bold text-primary tracking-tight">
+                        SCALE<span class="text-accent">BIZZ</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#accueil" class="text-gray-600 hover:text-accent font-medium transition-colors">Accueil</a>
+                    <a href="#services" class="text-gray-600 hover:text-accent font-medium transition-colors">Services</a>
+                    <a href="#tarifs" class="text-gray-600 hover:text-accent font-medium transition-colors">Tarifs</a>
+                    <a href="#temoignages" class="text-gray-600 hover:text-accent font-medium transition-colors">Témoignages</a>
+                    <a href="#contact" class="text-gray-600 hover:text-accent font-medium transition-colors">Contact</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="hidden md:flex items-center">
+                    <a href="#contact" class="bg-primary text-white px-6 py-2.5 rounded-full font-medium hover:bg-secondary transition-all transform hover:-translate-y-0.5 shadow-lg shadow-primary/30">
+                        Demander un devis
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-primary focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-1 shadow-lg">
+                <a href="#accueil" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-accent hover:bg-gray-50 rounded-md">Accueil</a>
+                <a href="#services" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-accent hover:bg-gray-50 rounded-md">Services</a>
+                <a href="#tarifs" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-accent hover:bg-gray-50 rounded-md">Tarifs</a>
+                <a href="#temoignages" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-accent hover:bg-gray-50 rounded-md">Témoignages</a>
+                <a href="#contact" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-accent hover:bg-gray-50 rounded-md">Contact</a>
+                <a href="#contact" class="block w-full text-center mt-4 bg-accent text-white px-5 py-3 rounded-md font-medium hover:bg-accentHover transition-colors">
+                    Demander un devis
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. HERO SECTION -->
+    <section id="accueil" class="pt-32 pb-20 lg:pt-48 lg:pb-32 bg-gradient-to-br from-light to-blue-50 overflow-hidden relative">
+        <!-- Decorative blobs -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-blue-200/50 blur-3xl opacity-60"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-orange-200/50 blur-3xl opacity-60"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right" data-aos-duration="1000">
+                    <span class="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-700 font-semibold text-sm mb-6">
+                        🚀 Agence Digitale à Kara, Togo
+                    </span>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary leading-tight mb-6">
+                        Votre site web professionnel, conçu pour <span class="gradient-text">le monde entier.</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-lg leading-relaxed">
+                        Attirez plus de clients avec un site internet moderne, rapide et optimisé. SCALEBIZZ accompagne les PME et entrepreneurs vers le succès digital.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#tarifs" class="bg-accent text-white px-8 py-3.5 rounded-full font-semibold text-center hover:bg-accentHover transition-all transform hover:-translate-y-1 shadow-lg shadow-accent/40 flex justify-center items-center gap-2">
+                            Voir nos offres <i class="fas fa-arrow-right text-sm"></i>
+                        </a>
+                        <a href="https://wa.me/22800000000" target="_blank" class="bg-white text-primary border border-gray-200 px-8 py-3.5 rounded-full font-semibold text-center hover:border-primary hover:bg-gray-50 transition-all flex justify-center items-center gap-2">
+                            <i class="fab fa-whatsapp text-green-500 text-lg"></i> Discuter du projet
+                        </a>
+                    </div>
+                    <div class="mt-8 flex items-center gap-4 text-sm text-gray-500">
+                        <div class="flex -space-x-2">
+                            <img class="w-8 h-8 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1531123897727-8f129e1baf8a?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Client">
+                            <img class="w-8 h-8 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Client">
+                            <img class="w-8 h-8 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1531384441138-2736e62e0919?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Client">
+                        </div>
+                        <p>Rejoint par des dizaines d'entrepreneurs locaux</p>
+                    </div>
+                </div>
+                <div class="relative lg:ml-auto" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Création de site web" class="rounded-2xl shadow-2xl relative z-10 border-4 border-white">
+                    <!-- Floating Badge -->
+                    <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-xl z-20 flex items-center gap-4 animate-bounce" style="animation-duration: 3s;">
+                        <div class="bg-green-100 p-3 rounded-full text-green-600">
+                            <i class="fas fa-rocket text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-500 font-medium">Sites livrés</p>
+                            <p class="text-lg font-bold text-primary">+50 Projets</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. POURQUOI NOUS CHOISIR -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <h2 class="text-sm font-bold text-accent uppercase tracking-wider mb-2">Notre Différence</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-primary mb-4">Pourquoi faire confiance à SCALEBIZZ ?</h3>
+                <p class="text-gray-600">Nous ne créons pas seulement des sites web, nous construisons des outils pour développer votre chiffre d'affaires.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Point 1 -->
+                <div class="bg-gray-50 p-8 rounded-2xl hover:shadow-xl transition-shadow border border-gray-100 group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-primary mb-3">Design Sur Mesure</h4>
+                    <p class="text-gray-600 text-sm">Chaque entreprise est unique. Votre site sera conçu pour refléter parfaitement votre identité de marque.</p>
+                </div>
+                <!-- Point 2 -->
+                <div class="bg-gray-50 p-8 rounded-2xl hover:shadow-xl transition-shadow border border-gray-100 group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center text-accent text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-primary mb-3">Livraison Rapide</h4>
+                    <p class="text-gray-600 text-sm">Nous respectons les délais. Obtenez votre site vitrine clé en main en seulement 5 à 14 jours selon le projet.</p>
+                </div>
+                <!-- Point 3 -->
+                <div class="bg-gray-50 p-8 rounded-2xl hover:shadow-xl transition-shadow border border-gray-100 group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center text-green-600 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-primary mb-3">Prix Accessibles</h4>
+                    <p class="text-gray-600 text-sm">Des tarifs étudiés et adaptés au marché togolais, sans compromis sur la qualité internationale.</p>
+                </div>
+                <!-- Point 4 -->
+                <div class="bg-gray-50 p-8 rounded-2xl hover:shadow-xl transition-shadow border border-gray-100 group" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center text-purple-600 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-primary mb-3">Support Dévoué</h4>
+                    <p class="text-gray-600 text-sm">Nous ne vous abandonnons pas après la livraison. Formation et support technique inclus.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. SECTION SERVICES / PROCESSUS -->
+    <section id="services" class="py-20 bg-primary text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <h2 class="text-sm font-bold text-accent uppercase tracking-wider mb-2">Notre Processus</h2>
+                <h3 class="text-3xl md:text-4xl font-bold mb-4">De l'idée à la mise en ligne, simplement.</h3>
+                <p class="text-gray-400">Une méthodologie éprouvée pour garantir un résultat à la hauteur de vos attentes.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+                <!-- Ligne connectrice (Desktop) -->
+                <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gray-700 -translate-y-1/2 z-0"></div>
+
+                <!-- Etape 1 -->
+                <div class="relative z-10 text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-20 h-20 mx-auto bg-secondary border-4 border-primary rounded-full flex items-center justify-center text-2xl font-bold mb-6 text-accent">1</div>
+                    <h4 class="text-xl font-bold mb-2">Échange & Besoins</h4>
+                    <p class="text-gray-400 text-sm">Nous discutons de votre vision, vos objectifs et votre public cible pour définir la meilleure stratégie.</p>
+                </div>
+                <!-- Etape 2 -->
+                <div class="relative z-10 text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-20 h-20 mx-auto bg-secondary border-4 border-primary rounded-full flex items-center justify-center text-2xl font-bold mb-6 text-accent">2</div>
+                    <h4 class="text-xl font-bold mb-2">Design & Maquette</h4>
+                    <p class="text-gray-400 text-sm">Création d'un design moderne et attrayant. Validation de l'aspect visuel avant le codage.</p>
+                </div>
+                <!-- Etape 3 -->
+                <div class="relative z-10 text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-20 h-20 mx-auto bg-secondary border-4 border-primary rounded-full flex items-center justify-center text-2xl font-bold mb-6 text-accent">3</div>
+                    <h4 class="text-xl font-bold mb-2">Développement</h4>
+                    <p class="text-gray-400 text-sm">Intégration technique optimisée pour la vitesse, le responsive mobile et le référencement naturel (SEO).</p>
+                </div>
+                <!-- Etape 4 -->
+                <div class="relative z-10 text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-20 h-20 mx-auto bg-accent border-4 border-primary rounded-full flex items-center justify-center text-2xl font-bold mb-6 text-white shadow-[0_0_20px_rgba(249,115,22,0.4)]">4</div>
+                    <h4 class="text-xl font-bold mb-2">Livraison & Formation</h4>
+                    <p class="text-gray-400 text-sm">Mise en ligne du site et formation rapide pour que vous soyez autonome sur la gestion du contenu.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. SECTION TARIFS -->
+    <section id="tarifs" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <h2 class="text-sm font-bold text-accent uppercase tracking-wider mb-2">Nos Offres</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-primary mb-4">Des solutions pour chaque budget</h3>
+                <p class="text-gray-600">Choisissez le pack qui correspond aux ambitions de votre entreprise.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                <!-- Pack 1 -->
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay="100">
+                    <h4 class="text-xl font-bold text-gray-800 mb-2">ESSENTIEL</h4>
+                    <p class="text-gray-500 text-sm mb-6">Pour démarrer sa présence en ligne</p>
+                    <div class="mb-6">
+                        <span class="text-sm text-gray-500">À partir de</span>
+                        <div class="flex items-baseline gap-1">
+                            <span class="text-4xl font-extrabold text-primary">85 000</span>
+                            <span class="text-lg font-semibold text-gray-500">FCFA</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-4 mb-8 text-sm text-gray-600">
+                        <li class="flex items-start gap-3"><i class="fas fa-check text-green-500 mt-1"></i> Site vitrine 1 à 3 pages</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-check text-green-500 mt-1"></i> Design Responsive (Mobile)</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-check text-green-500 mt-1"></i> Formulaire de contact</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-check text-green-500 mt-1"></i> Hébergement 1 an offert</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-check text-green-500 mt-1"></i> Livraison 5-7 jours</li>
+                    </ul>
+                    <a href="https://wa.me/22800000000?text=Bonjour,%20je%20suis%20intéressé(e)%20par%20le%20Pack%20Essentiel" target="_blank" class="block w-full py-3 px-4 bg-gray-100 hover:bg-gray-200 text-primary font-semibold text-center rounded-xl transition-colors">Choisir ce pack</a>
+                </div>
+
+                <!-- Pack 2 (Mise en avant) -->
+                <div class="bg-primary rounded-2xl shadow-xl p-8 transform lg:-translate-y-4 relative border-2 border-accent" data-aos="fade-up" data-aos-delay="200">
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                        <span class="bg-accent text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wide shadow-lg">Le Plus Populaire</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2">PROFESSIONNEL</h4>
+                    <p class="text-gray-300 text-sm mb-6">Idéal pour les PME et entreprises</p>
+                    <div class="mb-6">
+                        <span class="text-sm text-gray-300">À partir de</span>
+                        <div class="flex items-baseline gap-1">
+                            <span class="text-4xl font-extrabold text-white">195 000</span>
+                            <span class="text-lg font-semibold text-gray-300">FCFA</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-4 mb-8 text-sm text-gray-300">
+                        <li class="flex items-start gap-3"><i class="fas fa-check text-accent mt-1"></i> Site vitrine 5 à 7 pages</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-check text-accent mt-1"></i> Design personnalisé + Animations</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-check text-accent mt-1"></i> Optimisation SEO de base</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-check text-accent mt-1"></i> Intégration Réseaux Sociaux</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-check text-accent mt-1"></i> Nom de domaine + Hébergement (1 an)</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-check text-accent mt-1"></i> Formation à la gestion</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-check text-accent mt-1"></i> Livraison 10-14 jours</li>
+                    </ul>
+                    <a href="https://wa.me/22800000000?text=Bonjour,%20je%20suis%20intéressé(e)%20par%20le%20Pack%20Professionnel" target="_blank" class="block w-full py-3 px-4 bg-accent hover:bg-accentHover text-white font-bold text-center rounded-xl transition-all shadow-lg shadow-accent/30">Choisir ce pack</a>
+                </div>
+
+                <!-- Pack 3 -->
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay="300">
+                    <h4 class="text-xl font-bold text-gray-800 mb-2">BUSINESS / E-COMMERCE</h4>
+                    <p class="text-gray-500 text-sm mb-6">Pour vendre en ligne ou sur mesure</p>
+                    <div class="mb-6">
+                        <span class="text-sm text-gray-500">À partir de</span>
+                        <div class="flex items-baseline gap-1">
+                            <span class="text-4xl font-extrabold text-primary">350 000</span>
+                            <span class="text-lg font-semibold text-gray-500">FCFA</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-4 mb-8 text-sm text-gray-600">
+                        <li class="flex items-start gap-3"><i class="fas fa-check text-green-500 mt-1"></i> Site e-commerce complet</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-check text-green-500 mt-1"></i> Paiements (Mobile Money, Carte)</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-check text-green-500 mt-1"></i> Tableau de bord admin complet</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-check text-green-500 mt-1"></i> SEO Avancé</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-check text-green-500 mt-1"></i> Support technique 3 mois</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-check text-green-500 mt-1"></i> Livraison sur devis détaillé</li>
+                    </ul>
+                    <a href="https://wa.me/22800000000?text=Bonjour,%20je%20souhaite%20un%20devis%20pour%20un%20projet%20E-commerce/Sur-mesure" target="_blank" class="block w-full py-3 px-4 bg-gray-100 hover:bg-gray-200 text-primary font-semibold text-center rounded-xl transition-colors">Demander un devis</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. SECTION TÉMOIGNAGES -->
+    <section id="temoignages" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <h2 class="text-sm font-bold text-accent uppercase tracking-wider mb-2">Ils nous font confiance</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-primary mb-4">Ce que disent nos clients</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Avis 1 -->
+                <div class="bg-light p-8 rounded-2xl border border-gray-100 shadow-sm relative" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-quote-right text-4xl text-gray-200 absolute top-6 right-6"></i>
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"SCALEBIZZ a transformé ma boutique physique en une véritable plateforme de vente en ligne. Depuis le lancement, mes commandes ont explosé. Un service professionnel, rapide et très à l'écoute à Kara."</p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Client" class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <h5 class="font-bold text-primary">Kossi M.</h5>
+                            <p class="text-xs text-gray-500">Commerçant & Gérant Boutique</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Avis 2 -->
+                <div class="bg-light p-8 rounded-2xl border border-gray-100 shadow-sm relative" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-quote-right text-4xl text-gray-200 absolute top-6 right-6"></i>
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"Le site vitrine créé pour mon cabinet de conseil est tout simplement parfait. Il inspire confiance et modernité. L'équipe m'a livré le projet avant même la date prévue. Je recommande à 100%."</p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://images.unsplash.com/photo-1531123897727-8f129e1baf8a?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Client" class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <h5 class="font-bold text-primary">Yawa D.</h5>
+                            <p class="text-xs text-gray-500">Consultante en Management</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Avis 3 -->
+                <div class="bg-light p-8 rounded-2xl border border-gray-100 shadow-sm relative" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-quote-right text-4xl text-gray-200 absolute top-6 right-6"></i>
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"Gérant un complexe hôtelier, j'avais besoin d'un site pour gérer mes réservations en direct. SCALEBIZZ a compris mon besoin immédiatement. Le design est magnifique et le retour sur investissement rapide."</p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Client" class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <h5 class="font-bold text-primary">Essoham B.</h5>
+                            <p class="text-xs text-gray-500">Directeur d'Hôtel</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. SECTION À PROPOS -->
+    <section class="py-20 bg-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Equipe SCALEBIZZ" class="rounded-2xl shadow-xl">
+                </div>
+                <div data-aos="fade-left">
+                    <h2 class="text-sm font-bold text-accent uppercase tracking-wider mb-2">Qui sommes-nous ?</h2>
+                    <h3 class="text-3xl font-bold text-primary mb-6">L'Agence Web ancrée à Kara, tournée vers le monde.</h3>
+                    <p class="text-gray-600 mb-4">
+                        Fondée et basée au cœur de Kara au Togo, <strong>SCALEBIZZ</strong> est née d'une conviction : chaque entreprise, peu importe sa taille, mérite une présence en ligne professionnelle et performante.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        Notre mission est de démocratiser l'accès au web pour les commerçants, PME et entrepreneurs. Nous combinons l'expertise technique internationale avec une compréhension profonde des réalités et du marché local, pour vous livrer des outils digitaux qui génèrent de la croissance.
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary font-bold shadow-sm">
+                            <i class="fas fa-map-marker-alt text-accent"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-primary">Basés à Kara (Togo)</p>
+                            <p class="text-sm text-gray-500">Opérant dans toute l'Afrique et à l'international</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. SECTION FAQ -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-primary mb-4">Questions Fréquentes</h2>
+                <p class="text-gray-600">Tout ce que vous devez savoir avant de lancer votre projet web.</p>
+            </div>
+
+            <div class="space-y-4" data-aos="fade-up" data-aos-delay="100">
+                <!-- FAQ Item 1 -->
+                <div class="border border-gray-200 rounded-xl overflow-hidden bg-gray-50 faq-item">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none faq-btn">
+                        <span class="font-bold text-primary">Combien de temps faut-il pour créer mon site web ?</span>
+                        <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="px-6 pb-4 text-gray-600 text-sm hidden faq-content">
+                        Pour un site vitrine Essentiel, comptez 5 à 7 jours ouvrés. Un pack Professionnel nécessite 10 à 14 jours. Pour un e-commerce complet, le délai dépend de la complexité mais varie généralement entre 3 et 6 semaines.
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="border border-gray-200 rounded-xl overflow-hidden bg-gray-50 faq-item">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none faq-btn">
+                        <span class="font-bold text-primary">Quels sont les modes de paiement acceptés ?</span>
+                        <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="px-6 pb-4 text-gray-600 text-sm hidden faq-content">
+                        Nous acceptons les paiements via Mobile Money (Tmoney, Flooz), les virements bancaires, ou les paiements en espèces à notre agence à Kara. Généralement, nous demandons un acompte de 50% au démarrage et 50% à la livraison.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="border border-gray-200 rounded-xl overflow-hidden bg-gray-50 faq-item">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none faq-btn">
+                        <span class="font-bold text-primary">Le nom de domaine et l'hébergement sont-ils inclus ?</span>
+                        <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="px-6 pb-4 text-gray-600 text-sm hidden faq-content">
+                        Oui, pour les packs Essentiel et Professionnel, le nom de domaine (ex: www.votreentreprise.com) et l'hébergement sont offerts pour la première année. Ensuite, un tarif annuel de renouvellement s'applique.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="border border-gray-200 rounded-xl overflow-hidden bg-gray-50 faq-item">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none faq-btn">
+                        <span class="font-bold text-primary">Pourrai-je modifier le contenu du site moi-même ?</span>
+                        <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="px-6 pb-4 text-gray-600 text-sm hidden faq-content">
+                        Absolument. Nous utilisons des CMS (Systèmes de Gestion de Contenu) faciles à prendre en main. De plus, une formation est incluse à la livraison pour que vous puissiez modifier vos textes et images en toute autonomie.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. SECTION CTA FINAL -->
+    <section class="py-20 bg-gradient-to-r from-primary to-secondary relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10" data-aos="zoom-in">
+            <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Prêt à digitaliser votre entreprise ?</h2>
+            <p class="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">Ne laissez pas vos concurrents prendre l'avance. Contactez-nous dès aujourd'hui pour obtenir un devis gratuit et personnalisé.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://wa.me/22800000000" target="_blank" class="bg-accent text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-accentHover transition-all transform hover:-translate-y-1 shadow-[0_0_20px_rgba(249,115,22,0.4)] flex items-center justify-center gap-2">
+                    <i class="fab fa-whatsapp text-2xl"></i> Contactez-nous sur WhatsApp
+                </a>
+                <a href="#contact" class="bg-white/10 text-white backdrop-blur-sm border border-white/20 px-8 py-4 rounded-full font-bold text-lg hover:bg-white/20 transition-all flex items-center justify-center gap-2">
+                    <i class="fas fa-envelope"></i> Formulaire de contact
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION (Form) -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row">
+                <!-- Info -->
+                <div class="bg-primary p-10 md:w-2/5 text-white flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-2">Prenez Contact</h3>
+                        <p class="text-gray-400 text-sm mb-8">Nous sommes à Kara, mais nous travaillons avec le monde entier. Écrivez-nous !</p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <i class="fas fa-map-marker-alt text-accent text-xl mt-1"></i>
+                                <div>
+                                    <h5 class="font-bold">Adresse</h5>
+                                    <p class="text-sm text-gray-400">Kara, Togo<br>Quartier Chaminade (Exemple)</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <i class="fas fa-phone-alt text-accent text-xl mt-1"></i>
+                                <div>
+                                    <h5 class="font-bold">Téléphone / WhatsApp</h5>
+                                    <p class="text-sm text-gray-400">+228 00 00 00 00</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <i class="fas fa-envelope text-accent text-xl mt-1"></i>
+                                <div>
+                                    <h5 class="font-bold">Email</h5>
+                                    <p class="text-sm text-gray-400">contact@scalebizz.tg</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-12 flex gap-4">
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-accent transition-colors"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-accent transition-colors"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-accent transition-colors"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <!-- Form -->
+                <div class="p-10 md:w-3/5">
+                    <h3 class="text-2xl font-bold text-primary mb-6">Envoyez-nous un message</h3>
+                    <form action="#" method="POST" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Nom complet</label>
+                                <input type="text" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent" placeholder="Votre nom" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Téléphone</label>
+                                <input type="tel" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent" placeholder="+228 ..." required>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent" placeholder="votre@email.com" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Votre Projet</label>
+                            <select class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent">
+                                <option>Site Vitrine (Essentiel)</option>
+                                <option>Site Vitrine (Professionnel)</option>
+                                <option>Site E-commerce</option>
+                                <option>Projet Sur Mesure / Autre</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Détails</label>
+                            <textarea rows="4" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent" placeholder="Parlez-nous brièvement de votre entreprise..." required></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-primary text-white py-3 rounded-lg font-bold hover:bg-secondary transition-colors">
+                            Envoyer ma demande
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. FOOTER -->
+    <footer class="bg-primary pt-16 pb-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <a href="#" class="text-2xl font-bold text-white tracking-tight block mb-4">
+                        SCALE<span class="text-accent">BIZZ</span>
+                    </a>
+                    <p class="text-gray-400 text-sm max-w-sm mb-6">
+                        L'agence web basée à Kara qui propulse les entreprises togolaises et internationales vers le succès digital grâce à des sites web performants.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Liens Rapides</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#accueil" class="text-gray-400 hover:text-accent transition-colors">Accueil</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-accent transition-colors">Nos Services</a></li>
+                        <li><a href="#tarifs" class="text-gray-400 hover:text-accent transition-colors">Tarifs & Packs</a></li>
+                        <li><a href="#temoignages" class="text-gray-400 hover:text-accent transition-colors">Témoignages</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Légal</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Mentions Légales</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Politique de Confidentialité</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">CGV</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-800 text-center flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-500 text-sm">
+                    &copy; 2024 SCALEBIZZ. Tous droits réservés. Conçu avec passion à Kara.
+                </p>
+                <div class="flex gap-4 text-gray-500">
+                    <a href="#" class="hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-white transition-colors"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            once: true,
+            offset: 100,
+        });
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const icon = btn.querySelector('i');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            if (menu.classList.contains('hidden')) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
+        });
+
+        // Navbar blur effect on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
+
+        // FAQ Toggle
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const btn = item.querySelector('.faq-btn');
+            const content = item.querySelector('.faq-content');
+            const icon = item.querySelector('i');
+
+            btn.addEventListener('click', () => {
+                const isOpen = !content.classList.contains('hidden');
+                
+                // Close all others
+                faqItems.forEach(otherItem => {
+                    otherItem.querySelector('.faq-content').classList.add('hidden');
+                    otherItem.querySelector('i').classList.remove('rotate-180');
+                });
+
+                if (!isOpen) {
+                    content.classList.remove('hidden');
+                    icon.classList.add('rotate-180');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
