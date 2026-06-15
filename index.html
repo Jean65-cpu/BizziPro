@@ -12,18 +12,71 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS -->
-    <script src="js/tailwind-config.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0f172a',
+                        secondary: '#1e293b',
+                        accent: '#f97316',
+                        accentHover: '#ea580c',
+                        light: '#f8fafc',
+                    }
+                }
+            }
+        }
+    </script>
+    
     <!-- AOS CSS for Animations -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #2563eb, #f97316);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Modal animation */
+        #modal-box {
+            transition: transform 0.25s ease, opacity 0.25s ease;
+        }
+    </style>
 </head>
 <body class="font-sans text-gray-700 bg-gray-50 overflow-x-hidden">
+
+    <!-- SUCCESS MODAL -->
+    <div id="success-modal" class="fixed inset-0 z-[100] flex items-center justify-center hidden" aria-modal="true" role="dialog">
+        <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" id="modal-overlay"></div>
+        <div id="modal-box" class="relative bg-white rounded-3xl shadow-2xl p-10 max-w-md w-full mx-4 text-center scale-95">
+            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-check text-green-500 text-4xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-primary mb-3">Demande Envoyée !</h3>
+            <p class="text-gray-500 mb-2">Merci pour votre message. Notre équipe vous contactera dans les <strong>24 heures</strong>.</p>
+            <p class="text-gray-400 text-sm mb-8">Vous pouvez aussi nous rejoindre directement sur WhatsApp pour une réponse encore plus rapide.</p>
+            <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                <button id="modal-close-btn" class="px-6 py-3 bg-gray-100 hover:bg-gray-200 text-primary font-semibold rounded-xl transition-colors">
+                    Fermer
+                </button>
+                <a href="https://wa.me/22800000000" target="_blank" class="px-6 py-3 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-xl transition-colors flex items-center justify-center gap-2">
+                    <i class="fab fa-whatsapp text-lg"></i> WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
 
     <!-- 1. HEADER / NAVIGATION -->
     <header class="fixed w-full top-0 z-50 glass-nav transition-all duration-300" id="navbar">
@@ -85,6 +138,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div data-aos="fade-right" data-aos-duration="1000">
+                    <!-- Emoji supprimé comme demandé -->
                     <span class="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-700 font-semibold text-sm mb-6">
                         Agence Digitale à Kara, Togo
                     </span>
@@ -190,13 +244,13 @@
                 <!-- Etape 1 -->
                 <div class="relative z-10 text-center" data-aos="fade-up" data-aos-delay="100">
                     <div class="w-20 h-20 mx-auto bg-secondary border-4 border-primary rounded-full flex items-center justify-center text-2xl font-bold mb-6 text-accent">1</div>
-                    <h4 class="text-xl font-bold mb-2">Échange & Besoins</h4>
+                    <h4 class="text-xl font-bold mb-2">Échange &amp; Besoins</h4>
                     <p class="text-gray-400 text-sm">Nous discutons de votre vision, vos objectifs et votre public cible pour définir la meilleure stratégie.</p>
                 </div>
                 <!-- Etape 2 -->
                 <div class="relative z-10 text-center" data-aos="fade-up" data-aos-delay="200">
                     <div class="w-20 h-20 mx-auto bg-secondary border-4 border-primary rounded-full flex items-center justify-center text-2xl font-bold mb-6 text-accent">2</div>
-                    <h4 class="text-xl font-bold mb-2">Design & Maquette</h4>
+                    <h4 class="text-xl font-bold mb-2">Design &amp; Maquette</h4>
                     <p class="text-gray-400 text-sm">Création d'un design moderne et attrayant. Validation de l'aspect visuel avant le codage.</p>
                 </div>
                 <!-- Etape 3 -->
@@ -208,7 +262,7 @@
                 <!-- Etape 4 -->
                 <div class="relative z-10 text-center" data-aos="fade-up" data-aos-delay="400">
                     <div class="w-20 h-20 mx-auto bg-accent border-4 border-primary rounded-full flex items-center justify-center text-2xl font-bold mb-6 text-white shadow-[0_0_20px_rgba(249,115,22,0.4)]">4</div>
-                    <h4 class="text-xl font-bold mb-2">Livraison & Formation</h4>
+                    <h4 class="text-xl font-bold mb-2">Livraison &amp; Formation</h4>
                     <p class="text-gray-400 text-sm">Mise en ligne du site et formation rapide pour que vous soyez autonome sur la gestion du contenu.</p>
                 </div>
             </div>
@@ -322,7 +376,7 @@
                     </div>
                 </div>
 
-                <!-- Avis 2 -->
+                <!-- Avis 2 — Photo de Yawa ajoutée -->
                 <div class="bg-light p-8 rounded-2xl border border-gray-100 shadow-sm relative" data-aos="fade-up" data-aos-delay="200">
                     <i class="fas fa-quote-right text-4xl text-gray-200 absolute top-6 right-6"></i>
                     <div class="flex text-yellow-400 mb-4">
@@ -460,36 +514,10 @@
         </div>
     </section>
 
-    <!-- SUCCESS MODAL -->
-    <div id="success-modal" class="fixed inset-0 z-[100] flex items-center justify-center hidden" aria-modal="true" role="dialog">
-        <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" id="modal-overlay"></div>
-        <div class="relative bg-white rounded-3xl shadow-2xl p-10 max-w-md w-full mx-4 text-center transform transition-all duration-300 scale-95" id="modal-box">
-            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <i class="fas fa-check text-green-500 text-4xl"></i>
-            </div>
-            <h3 class="text-2xl font-bold text-primary mb-3">Demande Envoyée !</h3>
-            <p class="text-gray-500 mb-2">Merci pour votre message. Notre équipe vous contactera dans les <strong>24 heures</strong>.</p>
-            <p class="text-gray-400 text-sm mb-8">Vous pouvez aussi nous rejoindre directement sur WhatsApp pour une réponse rapide.</p>
-            <div class="flex flex-col sm:flex-row gap-3 justify-center">
-                <button id="modal-close-btn" class="px-6 py-3 bg-gray-100 hover:bg-gray-200 text-primary font-semibold rounded-xl transition-colors">
-                    Fermer
-                </button>
-                <a href="https://wa.me/22800000000" target="_blank" class="px-6 py-3 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-xl transition-colors flex items-center justify-center gap-2">
-                    <i class="fab fa-whatsapp text-lg"></i> WhatsApp
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- CONTACT SECTION (Form) -->
+    <!-- 10. CONTACT SECTION (Form) -->
     <section id="contact" class="py-20 bg-gray-50">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12" data-aos="fade-up">
-                <h2 class="text-sm font-bold text-accent uppercase tracking-wider mb-2">Parlons de votre projet</h2>
-                <h3 class="text-3xl md:text-4xl font-bold text-primary mb-4">Demandez votre devis gratuit</h3>
-                <p class="text-gray-600">Remplissez le formulaire ci-dessous et nous vous répondrons dans les 24h.</p>
-            </div>
-            <div class="bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row" data-aos="fade-up" data-aos-delay="100">
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row">
                 <!-- Info -->
                 <div class="bg-primary p-10 md:w-2/5 text-white flex flex-col justify-between">
                     <div>
@@ -498,27 +526,21 @@
                         
                         <div class="space-y-6">
                             <div class="flex items-start gap-4">
-                                <div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0">
-                                    <i class="fas fa-map-marker-alt text-accent"></i>
-                                </div>
+                                <i class="fas fa-map-marker-alt text-accent text-xl mt-1"></i>
                                 <div>
                                     <h5 class="font-bold">Adresse</h5>
                                     <p class="text-sm text-gray-400">Kara, Togo<br>Quartier Chaminade</p>
                                 </div>
                             </div>
                             <div class="flex items-start gap-4">
-                                <div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0">
-                                    <i class="fas fa-phone-alt text-accent"></i>
-                                </div>
+                                <i class="fas fa-phone-alt text-accent text-xl mt-1"></i>
                                 <div>
                                     <h5 class="font-bold">Téléphone / WhatsApp</h5>
                                     <p class="text-sm text-gray-400">+228 00 00 00 00</p>
                                 </div>
                             </div>
                             <div class="flex items-start gap-4">
-                                <div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0">
-                                    <i class="fas fa-envelope text-accent"></i>
-                                </div>
+                                <i class="fas fa-envelope text-accent text-xl mt-1"></i>
                                 <div>
                                     <h5 class="font-bold">Email</h5>
                                     <p class="text-sm text-gray-400">contact@scalebizz.tg</p>
@@ -526,21 +548,21 @@
                             </div>
                         </div>
 
-                        <!-- Google Maps embed -->
+                        <!-- Google Maps — Kara, Togo -->
                         <div class="mt-8 rounded-xl overflow-hidden border border-white/10">
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31716.16488488263!2d1.1578!3d9.5512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1023f36c57b5e18d%3A0x6b59a3ce5abf5f04!2sKara%2C%20Togo!5e0!3m2!1sfr!2stg!4v1700000000000!5m2!1sfr!2stg"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62857.37780764!2d1.1332!3d9.5511!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1023f36c57b5e18d%3A0x6b59a3ce5abf5f04!2sKara%2C%20Togo!5e0!3m2!1sfr!2stg!4v1700000000001!5m2!1sfr!2stg"
                                 width="100%"
                                 height="160"
                                 style="border:0;"
                                 allowfullscreen=""
                                 loading="lazy"
                                 referrerpolicy="no-referrer-when-downgrade"
-                                title="Localisation SCALEBIZZ à Kara"
+                                title="Localisation SCALEBIZZ à Kara, Togo"
                             ></iframe>
                         </div>
                     </div>
-                    <div class="mt-8 flex gap-4">
+                    <div class="mt-12 flex gap-4">
                         <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-accent transition-colors"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-accent transition-colors"><i class="fab fa-instagram"></i></a>
                         <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-accent transition-colors"><i class="fab fa-linkedin-in"></i></a>
@@ -548,8 +570,7 @@
                 </div>
                 <!-- Form -->
                 <div class="p-10 md:w-3/5">
-                    <h3 class="text-2xl font-bold text-primary mb-2">Envoyez-nous un message</h3>
-                    <p class="text-gray-500 text-sm mb-6">Tous les champs sont obligatoires.</p>
+                    <h3 class="text-2xl font-bold text-primary mb-6">Envoyez-nous un message</h3>
                     <form id="contact-form" class="space-y-4" novalidate>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
@@ -559,13 +580,13 @@
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1" for="contact-phone">Téléphone (Yas / Moov)</label>
                                 <input id="contact-phone" type="tel" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all" placeholder="ex: 90123456 ou 70123456" required>
-                                <p id="phone-error" class="text-red-500 text-xs mt-1 hidden">Entrez un numéro Yas (+228 9X) ou Moov (+228 7X) valide (8 chiffres).</p>
+                                <p id="phone-error" class="text-red-500 text-xs mt-1 hidden">Numéro Yas (90-99) ou Moov (70-79) invalide — 8 chiffres requis.</p>
                             </div>
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-1" for="contact-email">Email</label>
                             <input id="contact-email" type="email" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all" placeholder="votre@email.com" required>
-                            <p id="email-error" class="text-red-500 text-xs mt-1 hidden">Entrez une adresse email valide (ex: nom@domaine.com).</p>
+                            <p id="email-error" class="text-red-500 text-xs mt-1 hidden">Adresse email invalide (ex: nom@domaine.com).</p>
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-1" for="contact-project">Votre Projet</label>
@@ -580,8 +601,7 @@
                             <label class="block text-sm font-medium text-gray-700 mb-1" for="contact-details">Détails</label>
                             <textarea id="contact-details" rows="4" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all" placeholder="Parlez-nous brièvement de votre entreprise..." required></textarea>
                         </div>
-                        <button type="submit" id="submit-btn" class="w-full bg-primary text-white py-3.5 rounded-xl font-bold hover:bg-secondary transition-all flex items-center justify-center gap-2 hover:-translate-y-0.5 transform shadow-lg shadow-primary/20">
-                            <i class="fas fa-paper-plane"></i>
+                        <button type="submit" class="w-full bg-primary text-white py-3 rounded-lg font-bold hover:bg-secondary transition-colors">
                             Envoyer ma demande
                         </button>
                     </form>
@@ -590,7 +610,7 @@
         </div>
     </section>
 
-    <!-- 10. FOOTER -->
+    <!-- 11. FOOTER -->
     <footer class="bg-primary pt-16 pb-8 border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
@@ -607,7 +627,7 @@
                     <ul class="space-y-2 text-sm">
                         <li><a href="#accueil" class="text-gray-400 hover:text-accent transition-colors">Accueil</a></li>
                         <li><a href="#services" class="text-gray-400 hover:text-accent transition-colors">Nos Services</a></li>
-                        <li><a href="#tarifs" class="text-gray-400 hover:text-accent transition-colors">Tarifs & Packs</a></li>
+                        <li><a href="#tarifs" class="text-gray-400 hover:text-accent transition-colors">Tarifs &amp; Packs</a></li>
                         <li><a href="#temoignages" class="text-gray-400 hover:text-accent transition-colors">Témoignages</a></li>
                     </ul>
                 </div>
@@ -635,7 +655,6 @@
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- Main Script -->
     <script src="js/script.js"></script>
 </body>
 </html>
